@@ -9,6 +9,9 @@ function SideBar({ menuItems }) {
         setIsClosed(!isClosed);
     };
 
+    const activeStyle = {color: "#77D777"};
+    const nonActiveStyle = {color: "#D3D3D3"};
+
     return (
         <div className={`sidebar ${isClosed ? 'closed' : ''}`}>
             <h2 className={'sidebar-title'}>Category</h2>
@@ -18,14 +21,16 @@ function SideBar({ menuItems }) {
                     <li key={index} className="menu-item">
                         <NavLink
                             to={item.link}
-                            className={({isActive}) => isActive ? 'menu-link active' : 'menu-link'}
+                            className={({isActive}) => isActive ? 'menu-link active' : 'menu-link non-active'}
+                            style={({ isActive }) => (isActive ? activeStyle : nonActiveStyle )}
                         >
+                               <span className="menu-icon">
+                                    <img src={item.icon} alt={item.label}/>
+                                </span>
 
-                        <span className="menu-icon">
-                            <img src={item.icon} alt={item.label}/>
-                        </span>
-
-                        <div className="menu-label">{item.label}</div>
+                               <div className="menu-label">
+                                   {item.label}
+                               </div>
 
                         </NavLink>
                     </li>

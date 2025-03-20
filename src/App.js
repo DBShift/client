@@ -9,12 +9,12 @@ function App() {
 
     //사이드바 메뉴들
     const sidebarMenuItems = [
-        { label: 'User', link: '#', icon: '/images/user-icon.png' },
-        { label: 'Group', link: '#', icon: '/images/group-icon.png' },
-        { label: 'Import', link: '#', icon: '/images/import-icon.png' },
-        { label: 'Data Center', link: '#', icon: '/images/data-center-icon.png' },
-        { label: 'Export', link: '#', icon: '/images/export-icon.png' },
-        { label: 'Connect', link: '#', icon: '/images/connect-icon.png' }
+        { label: 'User', link: '/user', icon: '/images/user-icon.png' },
+        { label: 'Group', link: '/group', icon: '/images/group-icon.png' },
+        { label: 'Import', link: '/import', icon: '/images/import-icon.png' },
+        { label: 'Data Center', link: '/data-center', icon: '/images/data-center-icon.png' },
+        { label: 'Export', link: '/export', icon: '/images/export-icon.png' },
+        { label: 'Connect', link: '/connect', icon: '/images/connect-icon.png' }
     ];
 
     return (
