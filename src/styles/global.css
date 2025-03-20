@@ -1,0 +1,10 @@
+:root {
+    --background: #FFFFFF;
+    --main-color: #77D777;
+    --main-light-green-color: rgba(119, 215, 119, 0.45);
+    --text-color: #D3D3D3;
+    --border-color: rgba(216, 216, 216, 0.5);
+}
+.main-content {
+    margin-left: 300px;
+}

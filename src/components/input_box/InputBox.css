@@ -1,0 +1,16 @@
+@import "../../styles/global.css"; /* 전역 스타일 불러오기 */
+
+.input-box {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-box:focus {
+    border-color: var(--text-color, #007bff);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}

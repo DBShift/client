@@ -1,0 +1,97 @@
+@import "../../styles/global.css";
+
+/* 사이드바 전체 스타일 */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--background);
+    padding: 20px;
+    transition: width 0.3s ease, background-color 0.3s ease; /* width와 background-color에 transition 적용 */
+    z-index: 1000;
+}
+
+.sidebar-title {
+    color: var(--main-color);
+}
+
+.sidebar-underline {
+    color: var(--border-color);
+}
+
+
+.sidebar.closed {
+    width: 60px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    transition: padding 0.3s ease;
+}
+
+.sidebar .menu-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar .menu-label {
+    color: var(--text-color);
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+    margin: 5px;
+    width: 100%;
+}
+
+.sidebar .menu-item:hover .menu-link {
+    background-color: var(--main-color);
+    padding: 10px;
+    text-align: center;
+}
+
+.sidebar.closed .menu-label {
+    display: none;
+}
+
+.menu-icon img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.sidebar .menu-item a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* 호버 상태 */
+.sidebar .menu-item a:hover {
+    color: var(--main-color);
+}
+
+/* 활성화된 링크 스타일 */
+.sidebar .menu-item a.active {
+    color: var(--main-color) !important;
+}
+
+.sidebar.closed li {
+    padding: 5px 0;
+}
+
+.sidebar.closed .menu-icon {
+    transform: rotate(180deg);
+}
