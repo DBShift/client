@@ -4,6 +4,7 @@
     --main-light-green-color: rgba(119, 215, 119, 0.45);
     --text-color: #D3D3D3;
     --border-color: rgba(216, 216, 216, 0.5);
+    --table-text-color: #B0B0B0;
 }
 .main-content {
     margin-left: 300px;

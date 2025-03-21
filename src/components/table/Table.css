@@ -1,0 +1,39 @@
+.table-container {
+    max-height: 500px;
+    overflow-y: auto;  /* 세로 스크롤  */
+    overflow-x: auto;  /* 가로 스크롤 */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--table-text-color);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.table thead {
+    background-color: var(--main-color);
+    color: var(--background);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+    color: var(--main-color);
+    transition: background-color 0.3s ease;
+}

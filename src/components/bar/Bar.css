@@ -1,0 +1,55 @@
+.bar-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.bar-item {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-left: 30px solid var(--main-color);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.bar-content {
+    display: flex;
+    flex-direction: row; /* 내부 박스를 가로 정렬 */
+    gap: 10px; /* 내부 박스 간격 */
+    align-items: center;
+}
+
+.bar-box {
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    height: 50px;
+}
+
+/* 너비 비율 조정 */
+.name {
+    width: 40%;
+    border: 1px solid var(--border-color);
+}
+
+.type {
+    width: 25%;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center; /* 텍스트나 내용도 세로 가운데 정렬 */
+    justify-content: center; /* 내용도 가로 가운데 정렬 */
+}
+
+.date {
+    width: 35%;
+    border: 1px solid var(--border-color);
+}
+/*줄바꿈*/
+.bar-box div {
+    margin: 5px 0;
+}
