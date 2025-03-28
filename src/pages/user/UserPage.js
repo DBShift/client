@@ -6,18 +6,22 @@ import InputBox from "../../components/input_box/InputBox";
 import { getUserTableColumnData, getUserTableData } from "./UsersData";
 import Table from "../../components/table/Table";
 import { useState } from 'react';
+import Modal from "../../components/modal/Modal";
 
 function UserPage({ sidebarMenuItems }) {
 
     const userColumnData = getUserTableColumnData();
     const userData = getUserTableData()
 
-    const [searchTerm, setSearchTerm] = useState('');
 
+    //유저 생성 모달
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    //검색 관련 설정
+    const [searchTerm, setSearchTerm] = useState('');
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value);
     };
-
     const filteredUserData = userData.filter(user =>
         user.id.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -28,7 +32,7 @@ function UserPage({ sidebarMenuItems }) {
 
             <div className="main-content">
                 <div className="search-container">
-                    <Button children={"생성"} height={38}/>
+                    <Button children={"생성"} height={38} onClick={() => setModalOpen(true)} />
                     <InputBox
                         width={300}
                         height={40}
@@ -43,6 +47,10 @@ function UserPage({ sidebarMenuItems }) {
                 </div>
                 <div className="user-container">
                     <Table columns={userColumnData} data={filteredUserData} />
+                </div>
+
+                <div className="user-craete-modal">
+                    <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}/>
                 </div>
             </div>
         </>
