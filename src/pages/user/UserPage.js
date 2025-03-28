@@ -1,5 +1,4 @@
 import React from "react";
-import SideBar from "../../components/side_bar/SideBar";
 import Button from "../../components/buttons/Button";
 import './UserPage.css';
 import InputBox from "../../components/input_box/InputBox";
@@ -8,7 +7,7 @@ import Table from "../../components/table/Table";
 import { useState } from 'react';
 import Modal from "../../components/modal/Modal";
 
-function UserPage({ sidebarMenuItems }) {
+function UserPage() {
 
     const userColumnData = getUserTableColumnData();
     const userData = getUserTableData()
@@ -28,7 +27,10 @@ function UserPage({ sidebarMenuItems }) {
 
     return (
         <>
-            <SideBar menuItems={sidebarMenuItems}/>
+
+
+
+            
 
             <div className="main-content">
                 <div className="search-container">

@@ -6,6 +6,7 @@ import SideBar from "./components/side_bar/SideBar";
 import Table from "./components/table/Table";
 import Bar from "./components/bar/Bar";
 import UserPage from "./pages/user/UserPage";
+import GroupPage from "./pages/group/GroupPage";
 
 function App() {
     const [inputValue, setInputValue] = useState("");
@@ -91,11 +92,13 @@ function App() {
         { name: "파일 L", type: "동영상", date: "2024-03-10", description: "동영상 파일 L", createdBy: "배준호" },
         { name: "파일 M", type: "문서", date: "2024-03-09", description: "문서 파일 M", createdBy: "오서우" },
     ];
+    
 
 
     return (
         <Router>
             <div className="App">
+               
                 {/* 사이드바 예제 실제로는 함수로 분리해서 사용해주기 바람 */}
                 <SideBar menuItems={sidebarMenuItems}/>
 
@@ -126,7 +129,8 @@ function App() {
             </div>
             <Routes>
                 {/*<Route exact path="/" component={HomePage} />*/}
-                <Route path="/user" element={<UserPage sidebarMenuItems={sidebarMenuItems}/>} />
+                <Route path="/user" element={<UserPage/>} />
+                <Route path="/group" element={<GroupPage/>} />
                 {/*<Route component={NotFoundPage} />  /!* 모든 경로가 매칭되지 않으면 이 컴포넌트를 렌더링 *!/*/}
             </Routes>
         </Router>
