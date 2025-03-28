@@ -1,16 +1,27 @@
 @import "../../styles/global.css"; /* 전역 스타일 불러오기 */
 
 .input-box {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid var(--border-color, #ccc);
+    width: 100%; /* 컨테이너의 전체 너비 사용 */
+    padding: 10px 40px 10px 10px; /* 아이콘 공간 확보 */
+    border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 16px;
     outline: none;
-    transition: border-color 0.2s;
+    box-sizing: border-box; /* 패딩 포함한 크기 계산 */
 }
 
 .input-box:focus {
     border-color: var(--text-color, #007bff);
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.input-box-icon img {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #555;
+    pointer-events: none;
+    width: 40px;
 }

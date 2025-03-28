@@ -1,0 +1,19 @@
+.search-container{
+    margin: 50px 50px 30px 50px;
+
+    display: flex;
+    height: 50px;
+    gap: 20px;
+}
+.split-content{
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 90%;
+    margin: 0 auto;
+}
+.split-content hr{
+    border: 1px solid var(--border-color);
+}
+.user-container{
+    margin: 50px 50px 30px 50px;
+}

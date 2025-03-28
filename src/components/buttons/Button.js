@@ -10,13 +10,19 @@ import "./Button.css";
 //
 // variant → 버튼 스타일 (ex. primary, secondary, danger 등)
 
-function Button({ children, onClick, type = "button", variant = "primary" }) {
+function Button({ children, onClick, type = "button", variant = "primary", width, height }) {
     return (
-        <button className={`btn btn-${variant}`} onClick={onClick} type={type}>
+        <button
+            className={`btn btn-${variant}`}
+            onClick={onClick}
+            type={type}
+            style={{ width: width || 'auto', height: height || 'auto' }} // 기본값을 auto로 설정
+        >
             {children}
         </button>
     );
 }
+
 
 export default Button;
 

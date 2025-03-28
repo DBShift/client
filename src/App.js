@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Button from "./components/buttons/Button";
 import InputBox from "./components/input_box/InputBox";
 import SideBar from "./components/side_bar/SideBar";
 import Table from "./components/table/Table";
 import Bar from "./components/bar/Bar";
+import UserPage from "./pages/user/UserPage";
 
 function App() {
     const [inputValue, setInputValue] = useState("");
@@ -43,11 +44,26 @@ function App() {
         { key: "city", label: "컬럼" }, // 데이터에 없는 필드 추가 테스트
         { key: "city", label: "컬럼" }, // 데이터에 없는 필드 추가 테스트
         { key: "city", label: "컬럼" }, // 데이터에 없는 필드 추가 테스트
-
+        { key: "city", label: "컬럼" }, // 데이터에 없는 필드 추가 테스트
+        { key: "city", label: "컬럼" }, // 데이터에 없는 필드 추가 테스트
+        { key: "city", label: "컬럼" }, // 데이터에 없는 필드 추가 테스트
+        { key: "city", label: "컬럼" }, // 데이터에 없는 필드 추가 테스트
+        { key: "city", label: "컬럼" }, // 데이터에 없는 필드 추가 테스트
+        { key: "city", label: "컬럼" }, // 데이터에 없는 필드 추가 테스트
+        { key: "city", label: "컬럼" }, // 데이터에 없는 필드 추가 테스트
+        { key: "city", label: "컬럼" }, // 데이터에 없는 필드 추가 테스트
+        { key: "city", label: "컬럼" }, // 데이터에 없는 필드 추가 테스트
+        { key: "city", label: "컬럼" }, // 데이터에 없는 필드 추가 테스트
+        { key: "city", label: "컬럼" }, // 데이터에 없는 필드 추가 테스트
     ];
 
     const data = [
         { id: 1, name: "홍길동", age: 25, city: "서울" },
+        { id: 2, name: "김철수", age: 30 }, // city 없음
+        { id: 2, name: "김철수", age: 30 }, // city 없음
+        { id: 2, name: "김철수", age: 30 }, // city 없음
+        { id: 2, name: "김철수", age: 30 }, // city 없음
+        { id: 2, name: "김철수", age: 30 }, // city 없음
         { id: 2, name: "김철수", age: 30 }, // city 없음
         { id: 2, name: "김철수", age: 30 }, // city 없음
         { id: 2, name: "김철수", age: 30 }, // city 없음
@@ -83,32 +99,36 @@ function App() {
                 {/* 사이드바 예제 실제로는 함수로 분리해서 사용해주기 바람 */}
                 <SideBar menuItems={sidebarMenuItems}/>
 
-                <div className="main-content">
-                    {/* 버튼 사용 예제 실제로는 함수로 분리해서 사용해주기 바람 */}
-                    <Button variant="primary" onClick={() => alert("버튼 클릭!")}>
-                        기본 버튼
-                    </Button>
+                {/*<div className="main-content">*/}
+                {/*    /!* 버튼 사용 예제 실제로는 함수로 분리해서 사용해주기 바람 *!/*/}
+                {/*    <Button variant="primary" onClick={() => alert("버튼 클릭!")}>*/}
+                {/*        기본 버튼*/}
+                {/*    </Button>*/}
 
-                    {/* 입풋 박스 예제 실제로는 함수로 분리해서 사용해주기 바람 */}
-                    <InputBox
-                        value={inputValue}
-                        onChange={(e) => setInputValue(e.target.value)}
-                        placeholder="이름을 입력하세요"
-                        width="300px"
-                        height="20px"
-                    />
+                {/*    /!* 입풋 박스 예제 실제로는 함수로 분리해서 사용해주기 바람 *!/*/}
+                {/*    <InputBox*/}
+                {/*        value={inputValue}*/}
+                {/*        onChange={(e) => setInputValue(e.target.value)}*/}
+                {/*        placeholder="이름을 입력하세요"*/}
+                {/*        width="300px"*/}
+                {/*        height="20px"*/}
+                {/*    />*/}
 
-                    <Table
-                    data={data}
-                    columns={columns}>
-                    </Table>
+                {/*    <Table*/}
+                {/*    data={data}*/}
+                {/*    columns={columns}>*/}
+                {/*    </Table>*/}
 
 
-                    <Bar items={sampleBarItems} />
-                </div>
+                {/*    <Bar items={sampleBarItems} />*/}
+                {/*</div>*/}
 
             </div>
-
+            <Routes>
+                {/*<Route exact path="/" component={HomePage} />*/}
+                <Route path="/user" element={<UserPage sidebarMenuItems={sidebarMenuItems}/>} />
+                {/*<Route component={NotFoundPage} />  /!* 모든 경로가 매칭되지 않으면 이 컴포넌트를 렌더링 *!/*/}
+            </Routes>
         </Router>
 
     );
