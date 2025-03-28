@@ -13,6 +13,6 @@
 .split-content hr{
     border: 1px solid var(--border-color);
 }
-.user-container{
+.group-container{
     margin: 50px 50px 30px 50px;
 }

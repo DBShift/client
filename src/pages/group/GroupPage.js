@@ -1,41 +1,40 @@
 import React from "react";
+import './GroupPage.css';
 import Button from "../../components/buttons/Button";
-import './UserPage.css';
-import InputBox from "../../components/input_box/InputBox";
-import { getUserTableColumnData, getUserTableData } from "./UsersData";
 import Table from "../../components/table/Table";
+import InputBox from "../../components/input_box/InputBox";
 import { useState } from 'react';
-import Modal from "../../components/modal/Modal";
-import UserCreatePage from "./UserCreatePage";
+import { getGroupTableColumnData, getGroupTableData } from "../group/GroupData";
 
-function UserPage() {
 
-    const userColumnData = getUserTableColumnData();
-    const userData = getUserTableData()
+function GroupPage(){
+
+    const groupColumnData = getGroupTableColumnData();
+    const groupData = getGroupTableData();
 
 
     //유저 생성 모달
-    const [isModalOpen, setModalOpen] = useState(false);
-
+        const [isModalOpen, setModalOpen] = useState(false);
+    
     //검색 관련 설정
     const [searchTerm, setSearchTerm] = useState('');
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value);
     };
-    const filteredUserData = userData.filter(user =>
+    const filteredUserData = groupData.filter(user =>
         user.id.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    return (
+
+    return(
         <>
-            
             <div className="main-content">
                     <div className="search-container">
                         <Button children={"생성"} height={38} onClick={() => setModalOpen(true)}/>
                         <InputBox
                             width={300}
                             height={40}
-                            placeholder={"Search by User ID"}
+                            placeholder={"Group"}
                             icon={'/images/search-icon.png'}
                             value={searchTerm}
                             onChange={handleSearchChange}
@@ -44,19 +43,19 @@ function UserPage() {
                     <div className="split-content">
                         <hr/>
                     </div>
-                    <div className="user-container">
-                        <Table columns={userColumnData} data={filteredUserData}/>
+                    <div className="group-container">
+                        <Table columns={groupColumnData} data={filteredUserData}/>
                     </div>
                     <div className="user-craete-modal">
-                        <Modal
+                        {/* <Modal
                             isOpen={isModalOpen}
                             onClose={() => setModalOpen(false)}
                             children={UserCreatePage()}
-                        />
+                        /> */}
                     </div>
             </div>
         </>
-    );
+    )
 }
 
-export default UserPage;
+export default GroupPage;
