@@ -1,4 +1,13 @@
 
+export const getPermissionOptions = () =>{
+    return  [
+        { key: "generateUser", label: "유저 생성" },
+
+        { key: "editorUser", label: "유저 관리" },
+
+        { key: "generateGroup", label: "그룹 생성" },
+    ];
+}
 
 export const getUserTableColumnData = () => {
     return [

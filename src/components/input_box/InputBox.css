@@ -8,6 +8,7 @@
     font-size: 16px;
     outline: none;
     box-sizing: border-box; /* 패딩 포함한 크기 계산 */
+    color: var(--text-color);
 }
 
 .input-box:focus {
