@@ -6,7 +6,7 @@ import SideBar from "./components/side_bar/SideBar";
 import Table from "./components/table/Table";
 import Bar from "./components/bar/Bar";
 import UserPage from "./pages/user/UserPage";
-import GroupPage from "./pages/group/GroupPage";
+import GroupPageApply from "./pages/group/GroupPageApply";
 
 function App() {
     const [inputValue, setInputValue] = useState("");
@@ -130,7 +130,7 @@ function App() {
             <Routes>
                 {/*<Route exact path="/" component={HomePage} />*/}
                 <Route path="/user" element={<UserPage/>} />
-                <Route path="/group" element={<GroupPage/>} />
+                <Route path="/group" element={<GroupPageApply/>} />
                 {/*<Route component={NotFoundPage} />  /!* 모든 경로가 매칭되지 않으면 이 컴포넌트를 렌더링 *!/*/}
             </Routes>
         </Router>

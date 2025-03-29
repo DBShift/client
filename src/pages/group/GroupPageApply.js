@@ -4,7 +4,9 @@ import Button from "../../components/buttons/Button";
 import Table from "../../components/table/Table";
 import InputBox from "../../components/input_box/InputBox";
 import { useState } from 'react';
-import { getGroupTableColumnData, getGroupTableData } from "../group/GroupData";
+import Modal from "../../components/modal/Modal";
+import { getGroupTableColumnData, getGroupTableData } from "./GroupData";
+import GroupCreatePage from "./GroupCreatePage";
 
 
 function GroupPage(){
@@ -47,11 +49,11 @@ function GroupPage(){
                         <Table columns={groupColumnData} data={filteredUserData}/>
                     </div>
                     <div className="user-craete-modal">
-                        {/* <Modal
+                        <Modal
                             isOpen={isModalOpen}
                             onClose={() => setModalOpen(false)}
-                            children={UserCreatePage()}
-                        /> */}
+                            children={GroupCreatePage()}
+                        />
                     </div>
             </div>
         </>

@@ -1,0 +1,64 @@
+.group-info-container{
+    margin-top: 7vh;
+}
+.group-create-title-container{
+    color: var(--main-color);
+    margin: 30px;
+}
+.group-id-name-container{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px auto;
+    gap: 30px
+}
+.group-code-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin: 30px auto;
+    gap: 30px
+}
+
+.input-with-button {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.generate-btn {
+    font-size: 14px;
+    color: var(--main-color);
+    cursor: pointer;
+    text-align: right; /* 가운데 정렬 */
+}
+
+.generate-btn:hover {
+    text-decoration: underline;
+}
+
+.group-permission-container {
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap; /* 자동 줄바꿈 */
+    justify-content: space-between; /* 균등 정렬 */
+    gap: 10px; /* 간격 조정 */
+}
+
+.group-permission-container .checkbox-item {
+    width: calc(50% - 10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* 간격 조정 */
+}
+
+.group-submit-button-container{
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: end;
+}
